@@ -18,6 +18,7 @@ public class FeedbackScore {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String uuid;
+    private String mentoringSessionUuid;
     private Byte element1;
     private Byte element2;
     private Byte element3;
@@ -25,9 +26,10 @@ public class FeedbackScore {
     private Byte element5;
 
     @Builder
-    public FeedbackScore(Long id, String uuid, Byte element1, Byte element2, Byte element3, Byte element4, Byte element5) {
+    public FeedbackScore(Long id, String uuid, String mentoringSessionUuid, Byte element1, Byte element2, Byte element3, Byte element4, Byte element5) {
         this.id = id;
         this.uuid = uuid;
+        this.mentoringSessionUuid = mentoringSessionUuid;
         this.element1 = element1;
         this.element2 = element2;
         this.element3 = element3;

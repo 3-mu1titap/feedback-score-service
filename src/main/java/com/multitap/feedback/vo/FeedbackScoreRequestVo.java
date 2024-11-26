@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class FeedbackScoreRequestVo {
 
-    private String uuid;
+    private String mentoringSessionUuid;
     private Byte element1;
     private Byte element2;
     private Byte element3;
