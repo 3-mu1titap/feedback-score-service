@@ -8,6 +8,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class FeedbackScoreRequestVo {
 
+    @Schema(description = "멘토 닉네임", example = "강제리", nullable = true)
+    private String mentorNickName;
     private String mentoringSessionUuid;
     @Schema(description = "멘토링 카테고리", example = "자기소개서", nullable = true)
     private String categoryCode;

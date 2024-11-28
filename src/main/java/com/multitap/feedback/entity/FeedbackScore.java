@@ -19,6 +19,7 @@ public class FeedbackScore extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String uuid;
+    private String mentorNickName;
     private String mentoringSessionUuid;
     private String categoryCode;
     private Integer element1;
@@ -30,9 +31,10 @@ public class FeedbackScore extends BaseEntity {
 
 
     @Builder
-    public FeedbackScore(Long id, String uuid, String mentoringSessionUuid, String categoryCode, Integer element1, Integer element2, Integer element3, Integer element4, Integer element5, String content) {
+    public FeedbackScore(Long id, String uuid, String mentorNickName, String mentoringSessionUuid, String categoryCode, Integer element1, Integer element2, Integer element3, Integer element4, Integer element5, String content) {
         this.id = id;
         this.uuid = uuid;
+        this.mentorNickName = mentorNickName;
         this.mentoringSessionUuid = mentoringSessionUuid;
         this.categoryCode = categoryCode;
         this.element1 = element1;

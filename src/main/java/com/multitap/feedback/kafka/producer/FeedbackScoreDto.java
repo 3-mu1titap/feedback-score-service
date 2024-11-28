@@ -13,8 +13,8 @@ import java.time.format.DateTimeFormatter;
 public class FeedbackScoreDto {
 
     private String uuid;
+    private String mentorNickName;
     private String mentoringSessionUuid;
-    //todo: 멘토 이름
     private String mentoringDate;
     private String categoryCode;
     private Integer element1;
@@ -25,8 +25,9 @@ public class FeedbackScoreDto {
     private String content;
 
     @Builder
-    public FeedbackScoreDto(String uuid, String mentoringSessionUuid, String mentoringDate, String categoryCode, Integer element1, Integer element2, Integer element3, Integer element4, Integer element5, String content) {
+    public FeedbackScoreDto(String uuid, String mentorNickName, String mentoringSessionUuid, String mentoringDate, String categoryCode, Integer element1, Integer element2, Integer element3, Integer element4, Integer element5, String content) {
         this.uuid = uuid;
+        this.mentorNickName = mentorNickName;
         this.mentoringSessionUuid = mentoringSessionUuid;
         this.mentoringDate = mentoringDate;
         this.categoryCode = categoryCode;
@@ -41,6 +42,7 @@ public class FeedbackScoreDto {
     public static FeedbackScoreDto from(FeedbackScore feedbackScore) {
         return FeedbackScoreDto.builder()
                 .uuid(feedbackScore.getUuid())
+                .mentorNickName(feedbackScore.getMentorNickName())
                 .mentoringSessionUuid(feedbackScore.getMentoringSessionUuid())
                 .mentoringDate(formatDate(feedbackScore.getCreatedDate()))
                 .categoryCode(feedbackScore.getCategoryCode())

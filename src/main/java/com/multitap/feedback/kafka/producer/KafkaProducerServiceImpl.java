@@ -15,6 +15,7 @@ public class KafkaProducerServiceImpl implements KafkaProducerService {
     @Override
     public void sendFeedbackScore(FeedbackScoreDto feedbackScoreDto) {
         try {
+            log.info("피드백 보내는 값: {}", feedbackScoreDto.getMentoringDate());
             kafkaTemplate.send("create-feedback-score-topic", feedbackScoreDto);
         } catch (Exception e) {
             log.info("create feedback score event send 실패 : " + e);

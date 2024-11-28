@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class FeedbackScoreRequestDto {
     private String uuid;
+    private String mentorNickName;
     private String mentoringSessionUuid;
     private String categoryCode;
     private Integer element1;
@@ -20,8 +21,9 @@ public class FeedbackScoreRequestDto {
     private String content;
 
     @Builder
-    public FeedbackScoreRequestDto(String uuid, String mentoringSessionUuid, String categoryCode, Integer element1, Integer element2, Integer element3, Integer element4, Integer element5, String content) {
+    public FeedbackScoreRequestDto(String uuid, String mentorNickName, String mentoringSessionUuid, String categoryCode, Integer element1, Integer element2, Integer element3, Integer element4, Integer element5, String content) {
         this.uuid = uuid;
+        this.mentorNickName = mentorNickName;
         this.mentoringSessionUuid = mentoringSessionUuid;
         this.categoryCode = categoryCode;
         this.element1 = element1;
@@ -35,6 +37,7 @@ public class FeedbackScoreRequestDto {
     public static FeedbackScoreRequestDto from(FeedbackScoreRequestVo feedbackScoreRequestVo, String uuid) {
         return FeedbackScoreRequestDto.builder()
                 .uuid(uuid)
+                .mentorNickName(feedbackScoreRequestVo.getMentorNickName())
                 .mentoringSessionUuid(feedbackScoreRequestVo.getMentoringSessionUuid())
                 .categoryCode(feedbackScoreRequestVo.getCategoryCode())
                 .element1(feedbackScoreRequestVo.getElement1())
@@ -49,6 +52,7 @@ public class FeedbackScoreRequestDto {
     public FeedbackScore toEntity(FeedbackScoreRequestDto feedbackScoreRequestDto) {
         return FeedbackScore.builder()
                 .uuid(feedbackScoreRequestDto.getUuid())
+                .mentorNickName(feedbackScoreRequestDto.getMentorNickName())
                 .mentoringSessionUuid(feedbackScoreRequestDto.getMentoringSessionUuid())
                 .categoryCode(feedbackScoreRequestDto.getCategoryCode())
                 .element1(feedbackScoreRequestDto.getElement1())
