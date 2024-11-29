@@ -6,7 +6,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 
 @Getter
 @NoArgsConstructor
@@ -15,7 +14,7 @@ public class FeedbackScoreDto {
     private String uuid;
     private String mentorNickName;
     private String mentoringSessionUuid;
-    private String mentoringDate;
+    private LocalDateTime mentoringDate;
     private String categoryCode;
     private Integer element1;
     private Integer element2;
@@ -25,7 +24,7 @@ public class FeedbackScoreDto {
     private String content;
 
     @Builder
-    public FeedbackScoreDto(String uuid, String mentorNickName, String mentoringSessionUuid, String mentoringDate, String categoryCode, Integer element1, Integer element2, Integer element3, Integer element4, Integer element5, String content) {
+    public FeedbackScoreDto(String uuid, String mentorNickName, String mentoringSessionUuid, LocalDateTime mentoringDate, String categoryCode, Integer element1, Integer element2, Integer element3, Integer element4, Integer element5, String content) {
         this.uuid = uuid;
         this.mentorNickName = mentorNickName;
         this.mentoringSessionUuid = mentoringSessionUuid;
@@ -44,7 +43,7 @@ public class FeedbackScoreDto {
                 .uuid(feedbackScore.getUuid())
                 .mentorNickName(feedbackScore.getMentorNickName())
                 .mentoringSessionUuid(feedbackScore.getMentoringSessionUuid())
-                .mentoringDate(formatDate(feedbackScore.getCreatedDate()))
+                .mentoringDate(feedbackScore.getCreatedDate())
                 .categoryCode(feedbackScore.getCategoryCode())
                 .element1(feedbackScore.getElement1())
                 .element2(feedbackScore.getElement2())
@@ -55,9 +54,5 @@ public class FeedbackScoreDto {
                 .build();
     }
 
-    private static String formatDate(LocalDateTime date) {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        return date.format(formatter);
-    }
 }
 
