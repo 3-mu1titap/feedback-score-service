@@ -40,11 +40,11 @@ public class FeedbackScoreRequestDto {
                 .mentorNickName(feedbackScoreRequestVo.getMentorNickName())
                 .mentoringSessionUuid(feedbackScoreRequestVo.getMentoringSessionUuid())
                 .categoryCode(feedbackScoreRequestVo.getCategoryCode())
-                .element1(feedbackScoreRequestVo.getElement1())
-                .element2(feedbackScoreRequestVo.getElement2())
-                .element3(feedbackScoreRequestVo.getElement3())
-                .element4(feedbackScoreRequestVo.getElement4())
-                .element5(feedbackScoreRequestVo.getElement5())
+                .element1(feedbackScoreRequestVo.getElements().getElement1())
+                .element2(feedbackScoreRequestVo.getElements().getElement2())
+                .element3(feedbackScoreRequestVo.getElements().getElement3())
+                .element4(feedbackScoreRequestVo.getElements().getElement4())
+                .element5(feedbackScoreRequestVo.getElements().getElement5())
                 .content(feedbackScoreRequestVo.getContent())
                 .build();
     }
