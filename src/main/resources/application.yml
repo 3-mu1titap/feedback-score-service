@@ -15,5 +15,16 @@ spring:
       hibernate:
         format_sql: true
 
+kafka:
+  cluster:
+    uri: "43.200.30.178:29092,43.200.30.178:39092,43.200.30.178:49092"
+
+  producer:
+    key-serializer: org.apache.kafka.common.serialization.StringSerializer
+    value-serializer: org.apache.kafka.common.serialization.StringSerializer
+
+
+
+
 server:
-  port: 8086
+  port: 8089

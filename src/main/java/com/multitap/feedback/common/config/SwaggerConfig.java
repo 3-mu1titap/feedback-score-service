@@ -30,13 +30,14 @@ public class SwaggerConfig {
                 .addSecurityItem(securityRequirement)
                 .components(components)
                 .addServersItem(new Server().url("/"))
+                .addServersItem(new Server().url("feedback-score-service"))
                 .info(apiInfo());
     }
 
     private Info apiInfo() {
         return new Info()
-                .title("MEMBER SERVICE")
-                .description("MEMBER SERVICE Swagger UI")
+                .title("FEEDBACK-SCORE SERVICE")
+                .description("FEEDBACK SCORE SERVICE Swagger UI")
                 .version("1.0.0");
     }
 }
