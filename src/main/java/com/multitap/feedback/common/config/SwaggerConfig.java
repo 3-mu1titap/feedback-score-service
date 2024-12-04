@@ -30,6 +30,7 @@ public class SwaggerConfig {
                 .addSecurityItem(securityRequirement)
                 .components(components)
                 .addServersItem(new Server().url("/feedback-score-service"))
+                .addServersItem(new Server().url("/"))
                 .info(apiInfo());
     }
 
