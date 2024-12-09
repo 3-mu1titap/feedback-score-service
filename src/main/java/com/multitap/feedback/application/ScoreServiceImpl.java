@@ -11,12 +11,14 @@ import com.multitap.feedback.kafka.producer.FeedbackScoreDto;
 import com.multitap.feedback.kafka.producer.KafkaProducerService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
+@Transactional
 public class ScoreServiceImpl implements ScoreService {
 
     private final FeedbackScoreRepository feedbackScoreRepository;
