@@ -29,8 +29,7 @@ public class SwaggerConfig {
         return new OpenAPI()
                 .addSecurityItem(securityRequirement)
                 .components(components)
-                .addServersItem(new Server().url("/"))
-                .addServersItem(new Server().url("feedback-score-service"))
+                .addServersItem(new Server().url("feedback-service"))
                 .info(apiInfo());
     }
 
