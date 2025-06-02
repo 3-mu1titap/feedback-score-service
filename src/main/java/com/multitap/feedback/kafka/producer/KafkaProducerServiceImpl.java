@@ -16,6 +16,9 @@ public class KafkaProducerServiceImpl implements KafkaProducerService {
     public void sendFeedbackScore(FeedbackScoreDto feedbackScoreDto) {
         try {
             log.info("피드백 보내는 값: {}", feedbackScoreDto.getMentoringDate());
+
+            // feedbackQuery 서비스에서 컨슘 받음
+
             kafkaTemplate.send("create-feedback-score-topic", feedbackScoreDto);
         } catch (Exception e) {
             log.info("create feedback score event send 실패 : " + e);
